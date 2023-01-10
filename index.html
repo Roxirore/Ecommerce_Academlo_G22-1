@@ -5,28 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
         <header class="header">
+            <ul id="main-menu" class="main-menu">
+                <li class="main-menu__item"><a href="#home">Home</a></li>
+                <li class="main-menu__item"><a href="#products">Products</a></li>
+            </ul>
             <div>
-                <img src="./img/favicon.png" alt="logo">
-                <span>STORE</span>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                    </ul>
-                </nav>
+                <ul class="header-l">
+                    <li><img src="./img/favicon.png" alt="logo"></li>
+                    <li>STORE</li>
+                    <li>
+                        <ul id="main-menu__desktop" class="main-menu__desktop">
+                            <li class="main-menu__item"><a href="#home">Home</a></li>
+                            <li class="main-menu__item"><a href="#products">Products</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
+            <br><br><br>
             <div>
-                <ul>
-                    <li><i class='bx bx-moon'></i></li> 
-                    <li><i class='bx bx-sun'></i></li> 
-                    <li><i class='bx bx-shopping-bag'></i></li> 
-                    <li><div class="counter"><span>0</span></div></li> 
-                    <li><i class='bx bx-grid-small'></i></li>
+                <ul class="header-r">
+                    <li>
+                        <li id="sun"><i class='bx bx-sun bx-sm'></i></li>
+                        <li><i class='bx bx-moon bx-sm'></i></li> 
+                    </li>
+                    <li>
+                        <li><i class='bx bx-shopping-bag bx-sm'></i></li> 
+                        <li><div class="counter"><span>0</span></div></li>
+                    </li>
+                    <li>
+                        <div id="toggle-menu" class="toggle-menu">
+                            <i class='bx bx-grid-small bx-md'></i>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </header>
@@ -141,6 +157,6 @@
         </div>
     </footer>
  
-<script src="main.js"></script> 
+<script src="./img/main.js"></script> 
 </body>
 </html>
