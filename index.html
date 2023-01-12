@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
+    <div class="load">
+        <img class="loadIcon" src="./img/favicon.png" alt="load">
+    </div>
     <main>
         <header class="header">
             <ul id="main-menu" class="main-menu">
@@ -48,23 +51,25 @@
         </header>
     
     
-        <section id="home">
-            <div class="home__information">
-                <div>
-                    <h2>New Sweatshirt COLLECTIONS 2022</h2>
-                    <p>Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
-                    <span>$14.00</span>
-                </div>
-                <div>
-                    <div><a href=#""><button>Discover</button></a></div>
-                    <div><a href=#""><button>ADD TO CART</button></a></div>
+        <section class="container__homer">
+
+            <div class="h_padre">
+                <div class="home__images">
+                    <img class="img__pr" src="./img/home.png" alt="sweatshirt">
                 </div>
             </div>
-            <div class="home image">
-                <img src="./img/home.png" alt="sweatshirt">
+    
+            <div class="font_robo home__info">
+                <h2 class="title__h">New Sweatshirt <br> COLLECTIONS 2022</h2> <br>
+                <p class="paragraph__h">Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
+                <span class="price__h">$14.00</span>
+                <div class="btn__m">
+                    <button class="font_robo bnt button__1">Discover</button>
+                    <button class="font_robo bnt button__2">ADD TO CART</button>
+                </div>
             </div>
-            
         </section>
+    
     
     
         <section id="products">
@@ -114,7 +119,66 @@
             </div>
         </section>
     
+
         <section class="information">
+            <footer class="footer_container">  
+                
+                <div class="about">
+                    <div class="content_footer">
+                        <h3 class="tittle">Our information</h3>
+                        <ul class="country">
+                            <p>Toluca - México</p>
+                        </ul>
+                    </div>
+
+            <div  class="content_footer">
+                <h3 class="tittle">About Us</h3>
+                <ul class="links">
+                    <li><a href="#">Support Center</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Copy Right</a></li>
+                </ul>
+            </div>
+
+            <div class="content_footer">
+                <h3 class="tittle">Product</h3>
+                <ul class="links">
+                    <li><a href="#">Hoodies</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Sweatshirts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_social">
+                <h3 class="tittle">Social</h3>
+
+                <button class="Social facebook"><a href="#" target="_blank">
+                    <img src="./img/facebook.svg" alt=""> </a>
+                </button>
+
+                <button class="Social twitter">
+                    <a href="#" target="_blank">
+                    <img src="./img/twitter.svg" alt=""> </a>
+                </button>
+
+                <button class="Social instagram">
+                    <a href="#">
+                        <img src="./img/instagram.svg" alt="">
+                    </a>
+                </button>
+            </div>
+
+            </div>
+
+            <hr>
+
+                <div class="footer_trademark">
+                    <span>© ACADEMLO. All rigths reserved</span>
+                </div>
+            </footer>
+        </section>
+        <!-- <section class="information">
             <div>
                 <h3>Our information</h3>
                 <ul>
@@ -147,16 +211,16 @@
                 </ul>
             </div>
     
-        </section>
+        </section> -->
     </main>
 
 
-    <footer>
+    <!-- <footer>
         <div>
             <p>© ACADEMLO. All rigths reserved</p>
         </div>
-    </footer>
+    </footer> -->
  
-<script src="./img/main.js"></script> 
+<script src="./assets/script/main.js"></script> 
 </body>
 </html>
