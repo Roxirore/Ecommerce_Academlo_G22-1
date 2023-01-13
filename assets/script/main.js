@@ -1,20 +1,18 @@
-window.addEventListener("load", function() {
-    const load = document.querySelector(".load")
+window.addEventListener("load", function () {
+    const load = document.querySelector(".load");
 
-    setTimeout( function(){
-        load.style.display = "none"
+    setTimeout(function () {
+        load.style.display = "none";
     }, 3000);
-
-})
+});
 // menu hamburguesa inicio
-const toggleMenuElement = document.querySelector('#toggle-menu');
-const mainMenuElement = document.querySelector('#main-menu');
+const toggleMenuElement = document.querySelector("#toggle-menu");
+const mainMenuElement = document.querySelector("#main-menu");
 
-toggleMenuElement.addEventListener('click', () => {
-    mainMenuElement.classList.toggle('main-menu--show');
+toggleMenuElement.addEventListener("click", () => {
+    mainMenuElement.classList.toggle("main-menu--show");
 });
 // menu hamburguesa final
-
 
 // ..................CARRITO INICIO...............
 let cloths = [
@@ -24,6 +22,7 @@ let cloths = [
         price: 14,
         stock: 10,
         urlImage: "./assets/img/featured1.png",
+        classFilter: "Hoodies",
     },
     {
         id: "1",
@@ -31,6 +30,7 @@ let cloths = [
         price: 24,
         stock: 15,
         urlImage: "./assets/img/featured2.png",
+        classFilter: "Shirts",
     },
     {
         id: "2",
@@ -38,9 +38,9 @@ let cloths = [
         price: 24,
         stock: 20,
         urlImage: "./assets/img/featured3.png",
-    }
+        classFilter: "Sweatshirts",
+    },
 ];
-
 
 const iconCart = document.querySelector(".bx-cart-add");
 const contentCart = document.querySelector(".contentCar");
@@ -49,12 +49,7 @@ iconCart.addEventListener("click", function () {
     contentCart.classList.toggle("contentCar__show");
 });
 
-
-
-
-
-
-const products = document.querySelector(".products");
+const products = document.querySelector(".products_card_container");
 const cartProducts = document.querySelector(".carProducts");
 const carTotal = document.querySelector(".carTotal");
 const amountCart = document.querySelector(".amountCart");
@@ -106,7 +101,16 @@ function printTotalCart() {
 
     if (!arrayCart.length) {
         carTotal.innerHTML = `
-            <h3>No hay nada, a comprar!!!</h3>
+            <div class="empty_cart">
+                <div>
+                    <img src="./assets/img/empty-cart.png" alt="carro_vacio">
+                </div>
+                <br><br><br>
+                <div>
+                    <h3>Your cart is empty!!!</h3>
+                    <p>You can add items to your cart by clicking on the "+" button on the product page.</p>
+                </div>
+            </div> 
         `;
 
         return;
@@ -157,71 +161,51 @@ function printProductsInCart() {
 function printProducts() {
     let html = "";
 
-    // cloths.forEach(function (cloth){
-    //     html += `
-    //         <div class="product">
-    //             <div class="product__img">
-    //                 <img src="${cloth.urlImage}" alt="${cloth.name}"/>
-    //             </div>
-    //             <div class"product__info">
-    //                 <p>Nombre: ${cloth.name}</p>
-    //                 <p>Precio: ${cloth.price}</p>
-    //                 <p>Stock: ${cloth.stock}</p>
-    //             </div>
-    //             <div class="product__options" id="${cloth.id}">
-    //                 <button class="btn btn__add">+</i></button>
-    //             </div>
-    //         </div>
-    //     `
-    // })
-
-cloths.forEach(function ({ id, name, price, stock, urlImage }) {
+    cloths.forEach(function ({
+        id,
+        name,
+        price,
+        stock,
+        urlImage,
+        classFilter,
+    }) {
         const typeButton = stock
             ? '<button class="btn btn__add">+</button>'
             : '<button class="btn btn__NA">N / A</button>';
 
         html += `
-            <div class="product">
+            <div class="product ${classFilter}">
                 <div class="product__img">
                     <img src="${urlImage}" alt="${name}" />
                 </div>
+
+                <div class="product__options" id="${id}">
+                    ${typeButton}
+                </div>
+
                 <div class="data_products">
                         <span class="price">$${price}.00</span>
                         <span class="stock">| Stock: ${stock}</span>
                         <h3>${name}</h3>
                 </div>
 
-                <div class="product__options" id="${id}">
-                    ${typeButton}
-                </div>
             </div>
         `;
     });
-
-
-
-
 
     products.innerHTML = html;
 }
 printProducts();
 
 products.addEventListener("click", function (e) {
-
     if (e.target.classList.contains("btn__add")) {
-//         // obtenemos el id
+        //         // obtenemos el id
         const id = e.target.parentElement.id;
 
-//         // vamos a obtener el producto por id
+        //         // vamos a obtener el producto por id
         let findProduct = seacrProduct(id);
 
         if (findProduct.stock === 0) return alert("Ya no tengo mas");
-
-
-
-
-
-
 
         if (objCart[id]) {
             // logica para el carrito
@@ -313,16 +297,15 @@ printAmountCart();
 printProductsInCart();
 // ..............................CARRITO FINAL...........
 
-
 // ---------------------------------- S A R A -------------------------------
 
 var mixer = mixitup(".products_card_container", {
     selectors: {
-        target: '.card'
+        target: ".product",
     },
     animation: {
-        duration: 700
-    }
+        duration: 700,
+    },
 });
 
 console.log(mixer);
