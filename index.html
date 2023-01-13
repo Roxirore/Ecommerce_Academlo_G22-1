@@ -6,12 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
+
+
+<!-- ------------------------------------------------- L O A D  S C R E E N -------------------------------------- -->
+
+
     <div class="load">
         <img class="loadIcon" src="./assets/img/favicon.png" alt="load">
     </div>
+
+
+
+
+<!-- ------------------------------------------------- M E N U-------------------------------------------------- -->
+
+
     <main>
         <header class="header">
             <ul id="main-menu" class="main-menu">
@@ -37,9 +50,14 @@
                         <li id="sun"><i class='bx bx-sun bx-sm'></i></li>
                         <li><i class='bx bx-moon bx-sm'></i></li> 
                     </li>
-                    <li>
-                        <li><i class='bx bx-shopping-bag bx-sm'></i></li> 
-                        <li><div class="counter"><span>0</span></div></li>
+                    <li class="header-cart">
+                        <i class='bx bx-cart-add'>
+                            <span class="amountCart"></span>
+                        </i>
+                        <br><br>
+                        <button class="btn btn__refresh">Reset</button>
+                        <!-- <li><i class='bx bx-shopping-bag bx-sm'></i></li> 
+                        <li><div class="counter"><span>0</span></div></li> -->
                     </li>
                     <li>
                         <div id="toggle-menu" class="toggle-menu">
@@ -51,74 +69,121 @@
         </header>
     
     
-        <section class="container__homer">
+<!-- ----------------------------------------- H O M E ---------------------------------------------------- -->
 
-            <div class="h_padre">
-                <div class="home__images">
-                    <img class="img__pr" src="./assets/img/home.png" alt="sweatshirt">
-                </div>
+    <section id="home">
+
+        <div class="h_padre">
+            <div class="home__images">
+                <img class="img__pr" src="./assets/img/home.png" alt="sweatshirt">
             </div>
-    
-            <div class="font_robo home__info">
-                <h2 class="title__h">New Sweatshirt <br> COLLECTIONS 2022</h2> <br>
-                <p class="paragraph__h">Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
-                <span class="price__h">$14.00</span>
-                <div class="btn__m">
-                    <button class="font_robo bnt button__1">Discover</button>
-                    <button class="font_robo bnt button__2">ADD TO CART</button>
-                </div>
+        </div>
+
+        <div class="font_robo home__info">
+            <h2 class="title__h">New Sweatshirt <br> COLLECTIONS 2022</h2> <br>
+            <p class="paragraph__h">Latest arrival of the new Hanes Midweight Crewneck sweatshirt imported from the 2022 series, with a modern design.</p>
+            <span class="price__h">$14.00</span>
+            <div class="btn__m">
+                <button class="font_robo bnt button__1">Discover</button>
+                <button class="font_robo bnt button__2">ADD TO CART</button>
             </div>
-        </section>
+        </div>
+    </section>
     
     
+        <!-- ------------------------------------------ P R O D U C T S ------------------------------------------>
     
         <section id="products">
-            <div class="products__titles">
-                <div>
-                    <h3>Show All</h3>  modal a imagen roja
-                    <span>show all products</span>
-                </div>
-                <div>
-                    <a href="#photo1">
-                        <h3>Hoodies</h3>  modal a imagen ./assets/img/featured1.png
+            <div class="products_container">
+                <ul class="products_list">
+                    <li class="filter line" data-filter = ".ALL">
+                        <h3>Show All</h3>
+                        <span>show all products</span>
+                    </li>
+                    <li class="filter line" data-filter = ".Hoodies">
+                        <h3>Hoodies</h3> 
                         <span>3 products</span>
-                    </a>
-                </div>
-                <div>
-                    <a href="#photo2">
-                        <h3>Shirts</h3>  modal a imagen ./assets/img/featured2.png
+                    </li>
+                    <li class="filter line" data-filter = ".Shirts">
+                        <h3>Shirts</h3>
                         <span>4 products</span>
-                    </a>
-                </div>
-                <div>
-                    <a href="#photo3">
-                        <h3>Sweatshirts</h3>  modal a imagen ./assets/img/featured3.png
+                    </li>
+                    <li class="filter" data-filter = ".Sweatshirts">
+                        <h3>Sweatshirts</h3> 
                         <span>4 products</span>
-                    </a>
-                </div>
+                    </li>
+                </ul>
             </div>
-            <div class="products__photos">
-                <div id="photo1">
-                    <img src="./assets/img/featured1.png" alt="sweatshirt">
-                    <span>$14.00</span>
-                    <span>| Stock: 10</span>
-                    <h3>Hoodies</h3>
+
+            <div class="products_card_container">
+
+                <div class="card ALL Hoodies">
+                    <div class="img_products">
+                        <img src="./assets/img/featured1.png" alt="">
+                    </div>
+                    <li class="product_button">
+                        <a href="#"><i class="button bi bi-plus"></i></a>
+                    </li>
+                    <div class="data_products">
+                        <span class="price">$14.00</span>
+                        <span class="stock">| Stock: 10</span>
+                        <h3>Hoodies</h3>
+                    </div>
                 </div>
-                <div id="photo2">
-                    <img src="./assets/img/featured2.png" alt="sweatshirt">
-                    <span>$24.00</span>
-                    <span>| Stock: 15</span>
-                    <h3>Shirts</h3>
+
+                <div class="card ALL Shirts">
+                    <div class="img_products">
+                        <img src="./assets/img/featured2.png" alt="">
+                    </div>
+                    <li class="product_button">
+                        <a href="#"><i class="button bi bi-plus"></i></a>
+                    </li>
+                    <div class="data_products">
+                        <span class="price">$24.00</span>
+                        <span class="stock">| Stock: 15</span>
+                        <h3>Shirts</h3>
+                    </div>
                 </div>
-                <div id="photo3">
-                    <img src="./assets/img/featured3.png" alt="sweatshirt">
-                    <span>$24.00</span>
-                    <span>| Stock: 20</span>
-                    <h3>Sweatshirts</h3>
+
+                <div class="card ALL Sweatshirts">
+                    <div class="img_products">
+                        <img src="./assets/img/featured3.png" alt="">
+                    </div>
+                    <li class="product_button">
+                        <a href="#"><i class="button bi bi-plus"></i></a>
+                    </li>
+                    <div class="data_products">
+                        <span class="price">$24.00</span>
+                        <span class="stock">| Stock: 20</span>
+                        <h3>Sweatshirts</h3>
+                    </div>
                 </div>
             </div>
         </section>
+
+
+
+
+                <!-- inicio informacion carrito -->
+    <section>
+        <div class="container">
+            <div class="products">
+                <h2 class="container-products-title">My Cart</h2>
+            </div>
+        </div>
     
+        <div class="contentCar"  class="contentCar--show">
+
+            <div class="carProducts"></div>
+            <div class="carTotal"></div>
+        </div>
+    </section>
+    <!-- fin informacion carrito -->
+
+
+
+        <!-- ------------------------------------------- I N F O R M A T I O N ------------------------------------------------ -->
+
 
         <section class="information">
             <footer class="footer_container">  
@@ -152,18 +217,17 @@
 
             <div class="footer_social">
                 <h3 class="tittle">Social</h3>
-
-                <button class="Social facebook"><a href="#" target="_blank">
+                <button class="Social facebook"><a href="https://www.facebook.com/" target="_blank">
                     <img src="./assets/img/facebook.svg" alt=""> </a>
                 </button>
 
                 <button class="Social twitter">
-                    <a href="#" target="_blank">
+                    <a href="https://twitter.com/?lang=es" target="_blank">
                     <img src="./assets/img/twitter.svg" alt=""> </a>
                 </button>
 
                 <button class="Social instagram">
-                    <a href="#">
+                    <a href="https://www.instagram.com/" target="_blank">
                         <img src="./assets/img/instagram.svg" alt="">
                     </a>
                 </button>
@@ -173,6 +237,10 @@
 
             <hr>
 
+                <div class="repository">
+                    <a href="https://github.com/Roxirore/Ecommerce_Academlo_G22-1">Click to see the repository</a>
+                </div>
+
                 <div class="footer_trademark">
                     <span>© ACADEMLO. All rigths reserved</span>
                 </div>
@@ -180,7 +248,8 @@
         </section>
 
     </main>
+<script src="./mixitup/mixitup.min.js"></script> 
+<script src="./assets/script/main.js"></script>
 <script src="./assets/script/handleNavbar.js"></script> 
-<script src="./assets/script/main.js"></script> 
 </body>
 </html>
